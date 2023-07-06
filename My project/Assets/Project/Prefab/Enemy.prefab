@@ -330,7 +330,7 @@ GameObject:
   - component: {fileID: 8954864967584530556}
   - component: {fileID: 9012836357304087196}
   - component: {fileID: 9012836357304087199}
-  - component: {fileID: 9012836357304087198}
+  - component: {fileID: 4378884153658679239}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -405,7 +405,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0.5, z: 0}
---- !u!114 &9012836357304087198
+--- !u!114 &4378884153658679239
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -414,12 +414,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 9012503018060952080}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc7ae149cb4b9b544bdb3cb06dd030ec, type: 3}
+  m_Script: {fileID: 11500000, guid: c905cea8c66f86c4d9350742db9481af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 2295536502538710974, guid: 8cb051b22326e1e4691da99e5b7541c9, type: 3}
+  bulletPrefab: {fileID: 0}
   spawnRateMin: 0.5
   spawnRateMax: 3
+  enemySpawner: {fileID: 0}
 --- !u!1 &9012572825447167504
 GameObject:
   m_ObjectHideFlags: 0

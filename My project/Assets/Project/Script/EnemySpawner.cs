@@ -14,8 +14,15 @@ public class EnemySpawner : MonoBehaviour
     private float spawnRate = default;
     private float timeAfterSpawn = default;
     private bool isAllClear = true;
+    private float spawnerSpeed = 3f;
+    private Rigidbody spawner = default;
 
+    private bool gotoLeft = default;
+    private bool gotoRight = default;
 
+    private float respawnTimer = default;
+    private float respawnRate = default;
+    private float clearDelay = 3f;
     EnemyShooting enemyShooting;
     
     // Start is called before the first frame update
@@ -23,7 +30,8 @@ public class EnemySpawner : MonoBehaviour
     {
         timeAfterSpawn = 0f;
         spawnRate = Random.Range(spawnRateMin, spawnRateMax);
-        enemyShooting.enemySpawner = this;
+        spawner= GetComponent<Rigidbody>();
+        
     }
   
    
@@ -32,7 +40,7 @@ public class EnemySpawner : MonoBehaviour
     void Update()
     {
         timeAfterSpawn += Time.deltaTime;
-       
+        Debug.Log(enemylist);
         if(isAllClear==true)
         {
             if(enemylist<6)
@@ -45,7 +53,7 @@ public class EnemySpawner : MonoBehaviour
             GameObject enemy = Instantiate(enemyPrefab, transform.position, transform.rotation);
             
             spawnRate = spawnRateMin;
-                    enemylist += 1;
+          enemylist += 1;
 
         }
             }
@@ -56,10 +64,46 @@ public class EnemySpawner : MonoBehaviour
         }
         if(enemylist==0)
         {
-            isAllClear = true;
+
+            respawnTimer += Time.deltaTime;
+
+            if (respawnTimer>= respawnRate)
+            {
+                respawnTimer = 0;
+                if (!isAllClear)
+                {
+                    isAllClear = true;
+
+                }
+                respawnRate = 3f;
+            }
+           
         }
-        
-        
+        if(transform.position.x<=-4)
+        {
+            gotoRight = true;
+            gotoLeft = false;
+        }
+        else if(transform.position.x>=4)
+        {
+            gotoLeft = true;
+            gotoRight = false;
+        }
+        if(gotoRight)
+        {
+        Vector3 moveSpawner=new Vector3(spawnerSpeed, 0f, 0f);
+        spawner.velocity = moveSpawner;
+            //Debug.Log("오른쪽으로가는중");
+
+        }
+        else if(gotoLeft)
+        {
+            Vector3 moveSpawner = new Vector3(-spawnerSpeed, 0f, 0f);
+            spawner.velocity = moveSpawner;
+            //Debug.Log("왼쪽으로가는중");
+
+        }
+
 
     }
 }

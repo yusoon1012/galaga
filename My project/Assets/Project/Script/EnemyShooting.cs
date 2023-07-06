@@ -32,10 +32,7 @@ public class EnemyShooting : MonoBehaviour
         
     }
 
-    private void NewMethod()
-    {
-        enemySpawner.enemylist -= 1;
-    }
+
 
     // Update is called once per frame
     void Update()
@@ -49,7 +46,7 @@ public class EnemyShooting : MonoBehaviour
                 timeAfterSpawn = 0;
                 GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
                 bullet.transform.LookAt(target);
-                spawnRate = spawnRateMin;
+                spawnRate = Random.Range(spawnRateMin,spawnRateMax);
 
             }
         
