@@ -7,6 +7,7 @@ public class Bullet : MonoBehaviour
     public float speed = default;
     private Rigidbody bullet = default;
         EnemySpawner spawner;
+    GameManager manager;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +16,7 @@ public class Bullet : MonoBehaviour
 
         bullet.velocity = transform.up * speed;
         spawner = GameObject.FindObjectOfType<EnemySpawner>();
+        manager = GameObject.FindObjectOfType<GameManager>();
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -29,6 +31,7 @@ public class Bullet : MonoBehaviour
                 Destroy(gameObject, 0f);
                 
                 spawner.enemylist -= 1;
+                manager.score += 500;
             }
         }
         if(other.tag.Equals("Wall"))

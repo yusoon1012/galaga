@@ -40,7 +40,7 @@ public class EnemySpawner : MonoBehaviour
     void Update()
     {
         timeAfterSpawn += Time.deltaTime;
-        Debug.Log(enemylist);
+        //Debug.Log(enemylist);
         if(isAllClear==true)
         {
             if(enemylist<6)

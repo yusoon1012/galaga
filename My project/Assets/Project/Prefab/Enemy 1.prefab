@@ -361,8 +361,8 @@ GameObject:
   - component: {fileID: 2904609360776802938}
   - component: {fileID: 2962570339495870618}
   - component: {fileID: 2962570339495870617}
-  - component: {fileID: 7551910965055253953}
-  - component: {fileID: 6055420571029227913}
+  - component: {fileID: 5566703700262477949}
+  - component: {fileID: 7014292391871076886}
   m_Layer: 0
   m_Name: Enemy 1
   m_TagString: Enemy
@@ -432,12 +432,12 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2962237516322684950}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0.5, z: 0}
---- !u!114 &7551910965055253953
+--- !u!114 &5566703700262477949
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -446,26 +446,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 2962237516322684950}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c905cea8c66f86c4d9350742db9481af, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 1748892508454853217, guid: 4bfc1377361b0e049ab2f62a68879520, type: 3}
-  spawnRateMin: 0.5
-  spawnRateMax: 3
-  enemySpawner: {fileID: 0}
---- !u!114 &6055420571029227913
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2962237516322684950}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e840efef233d4947a8d0c3ea0628247, type: 3}
+  m_Script: {fileID: 11500000, guid: 22c82728e3d3b5044a532521d645b863, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   enemyRigid: {fileID: 2962570339495870618}
+--- !u!114 &7014292391871076886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2962237516322684950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc7ae149cb4b9b544bdb3cb06dd030ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 2295536502538710974, guid: 8cb051b22326e1e4691da99e5b7541c9, type: 3}
+  spawnRateMin: 0.5
+  spawnRateMax: 3
+  enemySpawner: {fileID: 0}
 --- !u!1 &2963030890020513958
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,12 +6,14 @@ public class EnemyBullet : MonoBehaviour
 {
     public float speed = default;
     private Rigidbody bullet = default;
+    PlayerController controller;
     // Start is called before the first frame update
     void Start()
     {
 
         bullet = GetComponent<Rigidbody>();
         bullet.velocity = transform.forward*speed;
+        controller = GameObject.FindAnyObjectByType<PlayerController>();
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -20,7 +22,12 @@ public class EnemyBullet : MonoBehaviour
             PlayerController playerControler = other.GetComponent<PlayerController>();
             if(playerControler!=null)
             {
-                playerControler.Die();
+                if(controller.isGodMode==false)
+                {
+                playerControler.Damaged();
+
+                }
+
             }
         Destroy(gameObject, 0f);
         }
